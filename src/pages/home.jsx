@@ -1,8 +1,12 @@
 import Navbar from "../components/navbar";
+import Carousel from "../components/carousel";
 
 function Home() {
     return(
-        <Navbar />
+        <>
+            <Navbar />
+            <Carousel />
+        </>
     )
 }
 
