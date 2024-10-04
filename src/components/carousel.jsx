@@ -3,10 +3,12 @@ import img1 from '../assets/img/miya.jpg';
 import img2 from '../assets/img/furina.jpeg';
 import img3 from '../assets/img/firefly1.jpeg';
 import img4 from '../assets/img/jinshi.jpg';
+import img5 from '../assets/img/caroline.jpg';
+import img6 from '../assets/img/diochan.jpg';
 
 const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const images = [img1, img2, img3, img4];
+  const images = [img1, img2, img3, img4, img5, img6];
 
   useEffect(() => {
     const interval = setInterval(() => {
