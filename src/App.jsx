@@ -1,16 +1,17 @@
 import { useState } from 'react'
 import Home from './pages/home'
 import './App.css'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import GameList from './components/gamelist';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="bg-white dark:bg-gray-900 min-h-screen">
-      <Home />
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} /> 
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
