@@ -15,8 +15,8 @@ const games = [
 
 const GameList = () => {
   return (
-    <div className="container mx-auto px-6 md:px-10 py-6 md:py-10"> {/* Reduced padding for a cleaner look */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4"> {/* Reduced gap for a tighter grid */}
+    <div className="container mx-auto px-6 md:px-10 py-6 md:py-10">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4"> 
         {games.map((game, index) => (
           <div
             key={index}
