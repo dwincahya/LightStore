@@ -4,7 +4,7 @@ import img2 from '../assets/img/furina.jpeg';
 import img3 from '../assets/img/firefly1.jpeg';
 import img4 from '../assets/img/jinshi.jpg';
 
-const Carousel = () => {
+const Banner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const images = [img1, img2, img3, img4];
 
@@ -38,4 +38,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default Banner;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FaFilter } from 'react-icons/fa';
 
-function TabNav({ onFilterChange }) {
+function TabNav({ onTabChange, onFilterChange }) {
     const [activeTab, setActiveTab] = useState('TOP UP');
     const [isFilterOpen, setIsFilterOpen] = useState(false);
     const [selectedFilter, setSelectedFilter] = useState(null);
@@ -13,12 +13,13 @@ function TabNav({ onFilterChange }) {
     const handleTabClick = (tabName) => {
         setActiveTab(tabName);
         setSelectedFilter(null);
-        onFilterChange(null); 
+        onFilterChange(null);
+        onTabChange(tabName); 
     };
 
     const handleFilterClick = (filter) => {
         setSelectedFilter(filter);
-        onFilterChange(filter); 
+        onFilterChange(filter);
         setIsFilterOpen(false);
     };
 
@@ -51,6 +52,16 @@ function TabNav({ onFilterChange }) {
                     {isFilterOpen && (
                         <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
                             <ul className="text-gray-900">
+                                <li
+                                    onClick={() => handleFilterClick('Semua Game')}
+                                    className={`px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out ${
+                                        selectedFilter === null
+                                            ? 'bg-gray-900 text-blue-500'
+                                            : 'hover:bg-gray-200'
+                                    }`}
+                                >
+                                    Semua Game
+                                </li>
                                 {['Battle Royale', 'MOBA', 'RPG', 'Populer'].map((filter) => (
                                     <li
                                         key={filter}
