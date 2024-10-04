@@ -4,7 +4,7 @@ import GameList from "../components/gamelist";
 
 function Home() {
     return (
-        <div className="bg-white dark:bg-gray-900 min-h-screen">
+        <div>
             <Navbar />
             <Carousel />
             <GameList />
