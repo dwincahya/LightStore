@@ -9,7 +9,6 @@ function Navbar() {
 
   return (
     <>
-      {/* Navbar with fixed position and transparent background */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-75 border-gray-200 dark:bg-gray-900 dark:bg-opacity-75 shadow-md backdrop-blur-md">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
@@ -50,7 +49,7 @@ function Navbar() {
             </button>
           </div>
 
-          <div className={`${isDropdownOpen ? 'block' : 'hidden'} items-center justify-between w-full md:flex md:w-auto md:order-1`} id="navbar-search">
+          <div className={`${isDropdownOpen ? 'block' : 'hidden'} transition-all duration-300 ease-in-out items-center justify-between w-full md:flex md:w-auto md:order-1`} id="navbar-search">
             <div className="relative mt-3 md:hidden">
               <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                 <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">

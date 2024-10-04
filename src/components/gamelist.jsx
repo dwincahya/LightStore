@@ -21,12 +21,12 @@ const games = [
   { name: 'PUBG Mobile', publisher: 'Tencent', image: img7 },
   { name: 'League of Legends: Wild Rift', publisher: 'Riot Games', image: img8 },
   { name: 'Zenless Zone Zero', publisher: 'miHoYo', image: img9 },
-  { name: 'Tower of Fantasy', publisher: 'miHoYo', image: img10 },
+  { name: 'Tower of Fantasy', publisher: 'Hotta Studio', image: img10 },
 ];
 
 const GameList = () => {
   return (
-    <div className="container mx-auto px-6 md:px-10 py-6 md:py-10">
+    <div className="container mx-auto px-6 md:px-10 py-6 md:py-8">
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4"> 
         {games.map((game, index) => (
           <div
