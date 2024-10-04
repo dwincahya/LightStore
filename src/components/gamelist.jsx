@@ -10,6 +10,14 @@ const games = [
   { name: 'Genshin Impact', publisher: 'miHoYo', image: img2 },
   { name: 'Free Fire', publisher: 'Garena', image: img3 },
   { name: 'Honor of Kings', publisher: 'Tencent', image: img4 },
+  { name: 'Mobile Legends', publisher: 'Moonton', image: img1 },
+  { name: 'Genshin Impact', publisher: 'miHoYo', image: img2 },
+  { name: 'Free Fire', publisher: 'Garena', image: img3 },
+  { name: 'Honor of Kings', publisher: 'Tencent', image: img4 },
+  { name: 'Mobile Legends', publisher: 'Moonton', image: img1 },
+  { name: 'Genshin Impact', publisher: 'miHoYo', image: img2 },
+  { name: 'Free Fire', publisher: 'Garena', image: img3 },
+  { name: 'Honor of Kings', publisher: 'Tencent', image: img4 },
 ];
 
 const GameList = () => {

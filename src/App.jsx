@@ -6,7 +6,9 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-   <Home />
+    <div className="bg-white dark:bg-gray-900 min-h-screen">
+      <Home />
+    </div>
   )
 }
 
