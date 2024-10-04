@@ -10,14 +10,7 @@ const games = [
   { name: 'Genshin Impact', publisher: 'miHoYo', image: img2 },
   { name: 'Free Fire', publisher: 'Garena', image: img3 },
   { name: 'Honor of Kings', publisher: 'Tencent', image: img4 },
-  { name: 'Mobile Legends', publisher: 'Moonton', image: img1 },
-  { name: 'Genshin Impact', publisher: 'miHoYo', image: img2 },
-  { name: 'Free Fire', publisher: 'Garena', image: img3 },
-  { name: 'Honor of Kings', publisher: 'Tencent', image: img4 },
-  { name: 'Mobile Legends', publisher: 'Moonton', image: img1 },
-  { name: 'Genshin Impact', publisher: 'miHoYo', image: img2 },
-  { name: 'Free Fire', publisher: 'Garena', image: img3 },
-  { name: 'Honor of Kings', publisher: 'Tencent', image: img4 },
+  { name: 'Mobile Legends', publisher: 'Moonton', image: img2 },
 ];
 
 const GameList = () => {
@@ -33,7 +26,7 @@ const GameList = () => {
               <img
                 src={game.image}
                 alt={game.name}
-                className="w-full h-72 object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:opacity-60"
+                className="w-full min-h-64 object-cover transition-transform duration-300 ease-in-out transform group-hover:scale-105 group-hover:opacity-60"
               />
             </div>
 
