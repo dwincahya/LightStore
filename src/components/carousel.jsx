@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import img1 from '../assets/img/miya.jpg';
-import img2 from '../assets/img/raiden.jpg';
-import img3 from '../assets/img/firefly2.jpg';
+import img2 from '../assets/img/furina.jpeg';
+import img3 from '../assets/img/firefly1.jpeg';
 import img4 from '../assets/img/jinshi.jpg';
 
 const Carousel = () => {
