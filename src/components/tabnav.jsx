@@ -19,9 +19,24 @@ function TabNav({ onTabChange, onFilterChange }) {
 
     const handleFilterClick = (filter) => {
         setSelectedFilter(filter);
-        onFilterChange(filter);
+        onFilterChange(filter === 'Semua Game' || filter === 'Semua Voucher' || filter === 'Semua Pulsa & ISI E-WALLET' ? null : filter);
         setIsFilterOpen(false);
     };
+
+    const getFiltersForActiveTab = () => {
+        switch (activeTab) {
+            case 'TOP UP':
+                return ['Semua Game', 'Battle Royale', 'MOBA', 'RPG', 'Populer'];
+            case 'VOUCHER':
+                return ['Semua Voucher', 'Voucher Game', 'Voucher E-Wallet'];
+            case 'PULSA & ISI E-WALLET':
+                return ['Semua Item', 'Pulsa Reguler', 'E-Wallet'];
+            default:
+                return [];
+        }
+    };
+
+    const filters = getFiltersForActiveTab();
 
     return (
         <nav className="px-5 md:px-20 pt-12 bg-transparent">
@@ -52,17 +67,7 @@ function TabNav({ onTabChange, onFilterChange }) {
                     {isFilterOpen && (
                         <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
                             <ul className="text-gray-900">
-                                <li
-                                    onClick={() => handleFilterClick('Semua Game')}
-                                    className={`px-4 py-2 cursor-pointer transition-all duration-300 ease-in-out ${
-                                        selectedFilter === null
-                                            ? 'bg-gray-900 text-blue-500'
-                                            : 'hover:bg-gray-200'
-                                    }`}
-                                >
-                                    Semua Game
-                                </li>
-                                {['Battle Royale', 'MOBA', 'RPG', 'Populer'].map((filter) => (
+                                {filters.map((filter) => (
                                     <li
                                         key={filter}
                                         onClick={() => handleFilterClick(filter)}

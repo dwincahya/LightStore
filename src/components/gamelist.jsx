@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-import games from '../data/gamesData';  // Data game dari file lokal
-import GameItem from './GameItem';      // Setiap item game
+import games from '../data/gamesData';  
+import GameItem from './GameItem';     
 
 const GameList = ({ selectedFilter }) => {
-  const [visibleCount, setVisibleCount] = useState(10);  // Menentukan jumlah game yang ditampilkan
+  const [visibleCount, setVisibleCount] = useState(10);  
 
-  // Filter game berdasarkan kategori yang dipilih
   const filteredGames = selectedFilter 
     ? games.filter(game => game.categories.includes(selectedFilter)) 
     : games;
 
-  // Fungsi untuk menambah jumlah game yang ditampilkan
   const handleShowMore = () => {
     setVisibleCount((prev) => Math.min(prev + 10, filteredGames.length));
   };
