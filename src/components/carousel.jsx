@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import img1 from '../assets/img/kagura.jpg';
+import img1 from '../assets/img/miya.jpg';
 import img2 from '../assets/img/raiden.jpg';
-import img3 from '../assets/img/firefly.jpeg';
+import img3 from '../assets/img/firefly2.jpg';
+import img4 from '../assets/img/jinshi.jpg';
 
 const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const images = [img1, img2, img3];
+  const images = [img1, img2, img3, img4];
 
   const handlePrev = () => {
     setCurrentSlide((prev) => (prev === 0 ? images.length - 1 : prev - 1));
