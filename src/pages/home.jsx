@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Carousel from '../components/Carousel';
+import Carousel from '../components/Banner';
 import TabNav from '../components/TabNav';
 import GameList from '../components/GameList';
 import VoucherList from '../components/VoucherList';
@@ -24,7 +23,6 @@ function Home() {
 
   return (
     <div>
-      <Navbar />
       <Carousel />
       <TabNav onTabChange={setActiveTab} onFilterChange={setSelectedFilter} />
       {renderContent()} 

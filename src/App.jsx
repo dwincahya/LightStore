@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import JualBeli from './pages/jualbeli';
 import CekTransaksi from './pages/transaksi';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/cek-transaksi" element={<CekTransaksi />} />
         <Route path="/jual-beli" element={<JualBeli />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

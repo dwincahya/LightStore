@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { FaCommentDots, FaWhatsapp, FaInstagram, FaTiktok } from 'react-icons/fa';
+import { FaWhatsapp, FaInstagram, FaTiktok } from 'react-icons/fa';
+import { RiCustomerService2Fill } from "react-icons/ri";
 
 const CSButton = () => {
   const [isHoveredCS, setIsHoveredCS] = useState(false);
@@ -81,7 +82,7 @@ const CSButton = () => {
         onMouseEnter={() => setIsHoveredCS(true)}
         onMouseLeave={() => setIsHoveredCS(false)}
       >
-        <FaCommentDots size={24} />
+        <RiCustomerService2Fill size={24} />
       </button>
     </div>
   );
