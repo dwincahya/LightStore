@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { FaCommentDots, FaWhatsapp, FaInstagram, FaTiktok } from 'react-icons/fa';
 
 const CSButton = () => {
-  const [isActive, setIsActive] = useState(false);  
-  const [isHovered, setIsHovered] = useState(false); 
+  const [isHoveredCS, setIsHoveredCS] = useState(false);
+  const [isHoveredIcons, setIsHoveredIcons] = useState(false); 
   const [isMobile, setIsMobile] = useState(false);   
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -22,29 +23,15 @@ const CSButton = () => {
   }, []);
 
   const toggleIcons = () => {
-    setIsActive(!isActive);
-  };
-
-  const handleMouseEnter = () => {
-    if (!isMobile) {
-      setIsHovered(true);
+    if (isMobile) {
+      setIsActive(!isActive);
     }
   };
 
-  const handleMouseLeave = () => {
-    if (!isMobile) {
-      setIsHovered(false);
-    }
-  };
-
-  const shouldShowIcons = isHovered || (isActive && isMobile);
+  const shouldShowIcons = isHoveredCS || isHoveredIcons || (isActive && isMobile);
 
   return (
-    <div 
-      className="fixed bottom-5 right-5 md:bottom-10 md:right-10 z-50 flex flex-col items-center"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="fixed bottom-5 right-5 md:bottom-10 md:right-10 z-50 flex flex-col items-center">
       <a
         href="https://wa.me/your_number"
         target="_blank"
@@ -53,6 +40,8 @@ const CSButton = () => {
           shouldShowIcons ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-12 scale-0 opacity-0'
         } hover:opacity-80`} 
         style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '10px' }}
+        onMouseEnter={() => setIsHoveredIcons(true)}
+        onMouseLeave={() => setIsHoveredIcons(false)}
       >
         <FaWhatsapp size={24} />
       </a>
@@ -65,6 +54,8 @@ const CSButton = () => {
           shouldShowIcons ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-8 scale-0 opacity-0'
         } hover:opacity-80`} 
         style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '10px' }}
+        onMouseEnter={() => setIsHoveredIcons(true)}
+        onMouseLeave={() => setIsHoveredIcons(false)}
       >
         <FaInstagram size={24} />
       </a>
@@ -77,6 +68,8 @@ const CSButton = () => {
           shouldShowIcons ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-0 opacity-0'
         } hover:opacity-80`} 
         style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '10px' }}
+        onMouseEnter={() => setIsHoveredIcons(true)}
+        onMouseLeave={() => setIsHoveredIcons(false)}
       >
         <FaTiktok size={24} />
       </a>
@@ -85,6 +78,8 @@ const CSButton = () => {
         onClick={toggleIcons}
         className="bg-blue-900 text-white p-3 md:p-4 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 ease-in-out flex items-center justify-center"
         style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+        onMouseEnter={() => setIsHoveredCS(true)}
+        onMouseLeave={() => setIsHoveredCS(false)}
       >
         <FaCommentDots size={24} />
       </button>
