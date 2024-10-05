@@ -5,6 +5,7 @@ import TabNav from '../components/TabNav';
 import GameList from '../components/GameList';
 import VoucherList from '../components/VoucherList';
 import PulsaEwalletList from '../components/PulsaEwalletList';
+import CSButton from '../components/CSButton';
 
 function Home() {
   const [selectedFilter, setSelectedFilter] = useState(null);
@@ -27,6 +28,7 @@ function Home() {
       <Carousel />
       <TabNav onTabChange={setActiveTab} onFilterChange={setSelectedFilter} />
       {renderContent()} 
+      <CSButton />
     </div>
   );
 }
