@@ -1,10 +1,14 @@
 import React from 'react';
+import InvoiceSearchApp from '../components/InvoiceSearchApp';
 
 function CekTransaksi() {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Cek Transaksi</h1>
-      <p>Ini adalah halaman untuk mengecek transaksi Anda.</p>
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+      <div className="w-full max-w-2xl p-6 bg-gray-800 rounded-lg shadow-lg">
+        <h2 className='text-white font-bold text-3xl mb-4'>Cari Transaksi Kamu!</h2>
+        <p className='text-white font-semibold mb-6'>Transaksi Real-Time pesanan masuk terbaru.</p>
+        <InvoiceSearchApp />
+      </div>
     </div>
   );
 }
