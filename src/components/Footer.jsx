@@ -8,8 +8,8 @@ const Footer = () => {
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start px-4">
         <div className="items-center md:items-start flex flex-col items-start mb-6 md:mb-0 md:w-1/4 md:mr-4">
           <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo Light Store" className="h-12 mb-6" />
-          <p className="text-xs md:text-sm mb-8 items-start">
-            Light Store - Menyediakan berbagai produk dengan harga terjangkau.
+          <p className="font-medium text-xs md:text-sm  mb-8 text-center md:text-left">
+            Light Store - Top Up Hemat Main Puas. Tempat Top Up dan Jual Beli Akun Game.
           </p>
 
           <div className="flex space-x-4 mb-6 items-start">
