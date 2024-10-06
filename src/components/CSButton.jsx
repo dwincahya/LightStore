@@ -25,7 +25,7 @@ const CSButton = () => {
 
   const toggleIcons = () => {
     if (isMobile) {
-      setIsActive(!isActive);
+      setIsActive(prev => !prev);
     }
   };
 
@@ -39,10 +39,10 @@ const CSButton = () => {
         rel="noopener noreferrer"
         className={`bg-green-500 text-white p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 ease-in-out transform ${
           shouldShowIcons ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-12 scale-0 opacity-0'
-        } hover:opacity-80`} 
+        } ${isMobile ? 'hover:opacity-100' : 'hover:opacity-80'}`} 
         style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '10px' }}
-        onMouseEnter={() => setIsHoveredIcons(true)}
-        onMouseLeave={() => setIsHoveredIcons(false)}
+        onMouseEnter={() => !isMobile && setIsHoveredIcons(true)}
+        onMouseLeave={() => !isMobile && setIsHoveredIcons(false)}
       >
         <FaWhatsapp size={24} />
       </a>
@@ -53,10 +53,10 @@ const CSButton = () => {
         rel="noopener noreferrer"
         className={`bg-pink-500 text-white p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 ease-in-out transform ${
           shouldShowIcons ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-8 scale-0 opacity-0'
-        } hover:opacity-80`} 
+        } ${isMobile ? 'hover:opacity-100' : 'hover:opacity-80'}`} 
         style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '10px' }}
-        onMouseEnter={() => setIsHoveredIcons(true)}
-        onMouseLeave={() => setIsHoveredIcons(false)}
+        onMouseEnter={() => !isMobile && setIsHoveredIcons(true)}
+        onMouseLeave={() => !isMobile && setIsHoveredIcons(false)}
       >
         <FaInstagram size={24} />
       </a>
@@ -67,10 +67,10 @@ const CSButton = () => {
         rel="noopener noreferrer"
         className={`bg-black text-white p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 ease-in-out transform ${
           shouldShowIcons ? 'translate-y-0 scale-100 opacity-100' : 'translate-y-4 scale-0 opacity-0'
-        } hover:opacity-80`} 
+        } ${isMobile ? 'hover:opacity-100' : 'hover:opacity-80'}`} 
         style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '10px' }}
-        onMouseEnter={() => setIsHoveredIcons(true)}
-        onMouseLeave={() => setIsHoveredIcons(false)}
+        onMouseEnter={() => !isMobile && setIsHoveredIcons(true)}
+        onMouseLeave={() => !isMobile && setIsHoveredIcons(false)}
       >
         <FaTiktok size={24} />
       </a>
@@ -79,8 +79,8 @@ const CSButton = () => {
         onClick={toggleIcons}
         className="bg-blue-900 text-white p-3 md:p-4 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 ease-in-out flex items-center justify-center"
         style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-        onMouseEnter={() => setIsHoveredCS(true)}
-        onMouseLeave={() => setIsHoveredCS(false)}
+        onMouseEnter={() => !isMobile && setIsHoveredCS(true)}
+        onMouseLeave={() => !isMobile && setIsHoveredCS(false)}
       >
         <RiCustomerService2Fill size={24} />
       </button>

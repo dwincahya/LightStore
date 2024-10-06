@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const GameItem = ({ game }) => {
+  const [isPressed, setIsPressed] = useState(false); 
+
   return (
-    <div className="relative cursor-pointer overflow-hidden rounded-lg shadow-lg group">
+    <div 
+      className={`relative cursor-pointer overflow-hidden rounded-lg shadow-lg group ${isPressed ? 'scale-95' : ''}`} 
+      onMouseDown={() => setIsPressed(true)} 
+      onMouseUp={() => setIsPressed(false)} 
+      onTouchStart={() => setIsPressed(true)} 
+      onTouchEnd={() => setIsPressed(false)}
+    >
       <div className="overflow-hidden">
         <img
           src={game.image}
