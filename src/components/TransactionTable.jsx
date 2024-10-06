@@ -24,7 +24,7 @@ const TransactionTable = ({ transactions }) => {
           </tr>
         </thead>
         <tbody>
-          {transactions.map((transaction) => (
+          {transactions.length > 0 ? transactions.map((transaction) => (
             <tr key={transaction.id}>
               <td className="py-2 px-1 sm:px-2">{transaction.date}</td>
               <td className="py-2 px-1 sm:px-2">{formatInvoiceNumber(transaction.invoiceNumber)}</td>
@@ -34,7 +34,11 @@ const TransactionTable = ({ transactions }) => {
                 {transaction.status}
               </td>
             </tr>
-          ))}
+          )) : (
+            <tr>
+              <td colSpan="5" className="text-center py-4">Tidak ada transaksi yang ditemukan</td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>

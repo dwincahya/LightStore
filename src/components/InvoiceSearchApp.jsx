@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { getPendingInvoices, searchInvoiceByNumber } from '../api/transaction'; 
 import SearchInvoice from './SearchInvoice';
 import TransactionTable from './TransactionTable';
 
@@ -10,37 +10,22 @@ const InvoiceSearchApp = () => {
   const [filteredTransactions, setFilteredTransactions] = useState([]);
 
   useEffect(() => {
-    const fetchTransactions = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/api/transactions');
-        const allTransactions = response.data;
-        const pendingTransactions = allTransactions.filter(transaction => transaction.status === 'pending');
-        setFilteredTransactions(pendingTransactions.slice(0, 10)); // Maksimal 10 item
-        setTransactions(allTransactions);
-      } catch (error) {
-        console.error("Error fetching transactions", error);
-      }
-    };
-
-    fetchTransactions();
+    const pendingInvoices = getPendingInvoices();
+    setFilteredTransactions(pendingInvoices.slice(0, 10));
+    setTransactions(pendingInvoices);
   }, []);
 
-  const handleSearch = async () => {
+  const handleSearch = () => {
+    setLoading(true);
     if (!invoiceNumber) {
       setFilteredTransactions(transactions.filter(transaction => transaction.status === 'pending').slice(0, 10));
+      setLoading(false);
       return;
     }
 
-    setLoading(true);
-    try {
-      const response = await axios.get(`http://localhost:5000/api/transactions/${invoiceNumber}`);
-      setFilteredTransactions(response.data);
-    } catch (error) {
-      console.error("Error fetching transaction", error);
-      setFilteredTransactions([]);
-    } finally {
-      setLoading(false);
-    }
+    const result = searchInvoiceByNumber(invoiceNumber);
+    setFilteredTransactions(result ? [result] : []);
+    setLoading(false);
   };
 
   const handleReset = () => {
