@@ -1,12 +1,11 @@
 import express from 'express';
 import cors from 'cors';
-import transactions from './src/data/invoice.js'; 
+import transactions from '../../src/data/invoice.js';  // Pastikan path ini benar.
 
 const app = express();
-const port = 5000;
-
 app.use(cors());
 
+// Rute API
 app.get('/api/transactions', (req, res) => {
   res.json(transactions);
 });
@@ -14,7 +13,7 @@ app.get('/api/transactions', (req, res) => {
 app.get('/api/transactions/:invoiceNumber', (req, res) => {
   const { invoiceNumber } = req.params;
 
-  const result = transactions.filter(transaction => 
+  const result = transactions.filter(transaction =>
     transaction.invoiceNumber === invoiceNumber
   );
 
@@ -25,6 +24,5 @@ app.get('/api/transactions/:invoiceNumber', (req, res) => {
   res.json(result);
 });
 
-app.listen(port, () => {
-  console.log(`Server berjalan di http://localhost:${port}`);
-});
+// Serverless Function Handler
+export default app;
