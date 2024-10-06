@@ -5,9 +5,14 @@ function TabNav({ onTabChange, onFilterChange }) {
     const [activeTab, setActiveTab] = useState('TOP UP');
     const [isFilterOpen, setIsFilterOpen] = useState(false);
     const [selectedFilter, setSelectedFilter] = useState(null);
+    const [isTabsVisible, setIsTabsVisible] = useState(true); 
 
     const toggleFilter = () => {
         setIsFilterOpen(!isFilterOpen);
+    };
+
+    const toggleTabsVisibility = () => {
+        setIsTabsVisible(!isTabsVisible);
     };
 
     const handleTabClick = (tabName) => {
@@ -45,7 +50,14 @@ function TabNav({ onTabChange, onFilterChange }) {
     return (
         <nav className="px-5 md:px-20 pt-12 bg-transparent">
             <div className="container mx-auto flex flex-row items-center justify-between space-x-1 md:space-x-6">
-                <div className="flex space-x-1 md:space-x-2">
+                <button 
+                    className="md:hidden text-blue-500 font-semibold"
+                    onClick={toggleTabsVisibility}
+                >
+                    {isTabsVisible ? 'Hide Tabs' : 'Show Tabs'}
+                </button>
+
+                <div className={`flex space-x-1 md:space-x-2 ${!isTabsVisible && 'hidden md:flex'}`}>
                     {['TOP UP', 'VOUCHER', 'PULSA & ISI E-WALLET'].map((tab) => (
                         <button
                             key={tab}
@@ -68,12 +80,11 @@ function TabNav({ onTabChange, onFilterChange }) {
                         <span className="hidden md:inline">Filter</span>
                     </button>
 
-                    {/* Dropdown with smooth transition */}
                     <div
                         className={`absolute right-0 mt-2 w-40 bg-blue-800 border border-gray-800 rounded-lg shadow-lg z-10 transition-all duration-300 ease-in-out transform ${
                             isFilterOpen
-                                ? 'opacity-100 translate-y-0' // Fully visible
-                                : 'opacity-0 -translate-y-2 pointer-events-none' // Hidden state
+                                ? 'opacity-100 translate-y-0' 
+                                : 'opacity-0 -translate-y-2 pointer-events-none' 
                         }`}
                     >
                         <ul className="text-white">
