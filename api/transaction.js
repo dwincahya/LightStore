@@ -1,11 +1,10 @@
 import express from 'express';
 import cors from 'cors';
-import transactions from '../../src/data/invoice.js';  // Pastikan path ini benar.
+import transactions from '../src/data/invoice.js';  
 
 const app = express();
 app.use(cors());
 
-// Rute API
 app.get('/api/transactions', (req, res) => {
   res.json(transactions);
 });
