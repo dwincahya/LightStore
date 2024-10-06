@@ -1,16 +1,20 @@
 import express from 'express';
 import cors from 'cors';
-import transactions from '../../src/data/invoice'; 
+import transactions from '../src/data/invoice.js'; 
+
 const app = express();
+const port = 5000;
+
 app.use(cors());
 
-app.get('/transactions', (req, res) => {
+app.get('/api/transactions', (req, res) => {
   res.json(transactions);
 });
 
-app.get('/transactions/:invoiceNumber', (req, res) => {
+app.get('/api/transactions/:invoiceNumber', (req, res) => {
   const { invoiceNumber } = req.params;
-  const result = transactions.filter(transaction =>
+
+  const result = transactions.filter(transaction => 
     transaction.invoiceNumber === invoiceNumber
   );
 
@@ -21,4 +25,6 @@ app.get('/transactions/:invoiceNumber', (req, res) => {
   res.json(result);
 });
 
-export default app;
+app.listen(port, () => {
+  console.log(`Server berjalan di http://localhost:${port}`);
+});
