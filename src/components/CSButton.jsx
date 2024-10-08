@@ -43,6 +43,7 @@ const CSButton = () => {
         style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '10px' }}
         onMouseEnter={() => !isMobile && setIsHoveredIcons(true)}
         onMouseLeave={() => !isMobile && setIsHoveredIcons(false)}
+        aria-label="Message Us on WhatsApp" 
       >
         <FaWhatsapp size={24} />
       </a>
@@ -57,6 +58,7 @@ const CSButton = () => {
         style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '10px' }}
         onMouseEnter={() => !isMobile && setIsHoveredIcons(true)}
         onMouseLeave={() => !isMobile && setIsHoveredIcons(false)}
+        aria-label="Follow Us on Instagram" 
       >
         <FaInstagram size={24} />
       </a>
@@ -71,6 +73,7 @@ const CSButton = () => {
         style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '10px' }}
         onMouseEnter={() => !isMobile && setIsHoveredIcons(true)}
         onMouseLeave={() => !isMobile && setIsHoveredIcons(false)}
+        aria-label="Check Us Out on TikTok" 
       >
         <FaTiktok size={24} />
       </a>
@@ -81,6 +84,7 @@ const CSButton = () => {
         style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
         onMouseEnter={() => !isMobile && setIsHoveredCS(true)}
         onMouseLeave={() => !isMobile && setIsHoveredCS(false)}
+        aria-label="Customer Service"
       >
         <RiCustomerService2Fill size={24} />
       </button>
