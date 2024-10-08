@@ -34,7 +34,7 @@ const CSButton = () => {
   return (
     <div className="fixed bottom-5 right-5 md:bottom-10 md:right-10 z-50 flex flex-col items-center">
       <a
-        href="https://wa.me/your_number"
+        href="https://wa.me/123456789"
         target="_blank"
         rel="noopener noreferrer"
         className={`bg-green-500 text-white p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 ease-in-out transform ${
@@ -43,13 +43,13 @@ const CSButton = () => {
         style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '10px' }}
         onMouseEnter={() => !isMobile && setIsHoveredIcons(true)}
         onMouseLeave={() => !isMobile && setIsHoveredIcons(false)}
-        aria-label="Message Us on WhatsApp" 
+        aria-label="Message Us on WhatsApp"
       >
         <FaWhatsapp size={24} />
       </a>
 
       <a
-        href="https://www.instagram.com/your_instagram"
+        href="https://www.instagram.com/"
         target="_blank"
         rel="noopener noreferrer"
         className={`bg-pink-500 text-white p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 ease-in-out transform ${
@@ -64,7 +64,7 @@ const CSButton = () => {
       </a>
 
       <a
-        href="https://www.tiktok.com/@your_tiktok"
+        href="https://www.tiktok.com/"
         target="_blank"
         rel="noopener noreferrer"
         className={`bg-black text-white p-3 md:p-4 rounded-full shadow-lg transition-all duration-300 ease-in-out transform ${
@@ -73,7 +73,7 @@ const CSButton = () => {
         style={{ width: '50px', height: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '10px' }}
         onMouseEnter={() => !isMobile && setIsHoveredIcons(true)}
         onMouseLeave={() => !isMobile && setIsHoveredIcons(false)}
-        aria-label="Check Us Out on TikTok" 
+        aria-label="Check Us Out on TikTok"
       >
         <FaTiktok size={24} />
       </a>

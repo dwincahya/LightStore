@@ -49,6 +49,7 @@ function TabNav({ onTabChange, onFilterChange }) {
                     {['TOP UP', 'VOUCHER', 'PULSA & ISI E-WALLET'].map((tab) => (
                         <button
                             key={tab}
+                            aria-label={`Select ${tab} tab`} 
                             className={`${
                                 activeTab === tab ? 'text-white bg-blue-700' : 'text-blue-500'
                             } font-semibold hover:text-white px-1 py-0.5 md:px-2 md:py-1 rounded transition-colors duration-300 text-xs md:text-base`}
@@ -62,18 +63,18 @@ function TabNav({ onTabChange, onFilterChange }) {
                 <div className="relative flex items-center">
                     <button
                         onClick={toggleFilter}
+                        aria-label={isFilterOpen ? 'Close filter options' : 'Open filter options'} 
                         className="flex items-center bg-blue-800 text-white font-semibold px-1 py-0.5 md:px-2 md:py-1 rounded border border-gray-800 hover:bg-blue-900 transition-all duration-300 text-xs md:text-base"
                     >
                         <FaFilter className="mr-1" />
                         <span className="hidden md:inline">Filter</span>
                     </button>
 
-                    {/* Dropdown with smooth transition */}
                     <div
                         className={`absolute right-0 mt-2 w-40 bg-blue-800 border border-gray-800 rounded-lg shadow-lg z-10 transition-all duration-300 ease-in-out transform ${
                             isFilterOpen
-                                ? 'opacity-100 translate-y-0' // Fully visible
-                                : 'opacity-0 -translate-y-2 pointer-events-none' // Hidden state
+                                ? 'opacity-100 translate-y-0' 
+                                : 'opacity-0 -translate-y-2 pointer-events-none' 
                         }`}
                     >
                         <ul className="text-white">
