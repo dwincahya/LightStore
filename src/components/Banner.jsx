@@ -30,7 +30,7 @@ const Banner = () => {
             <img
               src={src}
               className="object-cover w-full h-full"
-              alt={`Slide ${index + 1}`}
+              alt={`Banner ${index + 1}`}
             />
             <div className="absolute inset-0 bg-black bg-opacity-40" />
           </div>

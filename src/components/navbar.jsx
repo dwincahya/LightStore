@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-75 border-gray-200 dark:bg-gray-900 dark:bg-opacity-75 shadow-md backdrop-blur-md">
+      <nav className="bg-gray-900 fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-75 border-gray-200 dark:bg-gray-900 dark:bg-opacity-75 shadow-md backdrop-blur-md">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <NavLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Logo" />
