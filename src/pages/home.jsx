@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Carousel from '../components/Banner';
 import TabNav from '../components/TabNav';
 import GameList from './GameList';
@@ -9,6 +9,10 @@ import CSButton from '../components/CSButton';
 function Home() {
   const [selectedFilter, setSelectedFilter] = useState(null);
   const [activeTab, setActiveTab] = useState('TOP UP');
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [activeTab]); 
 
   const renderContent = () => {
     switch (activeTab) {
@@ -22,7 +26,7 @@ function Home() {
   };
 
   return (
-    <div>
+    <div style={{ scrollBehavior: 'smooth' }}> 
       <Carousel />
       <TabNav onTabChange={setActiveTab} onFilterChange={setSelectedFilter} />
       {renderContent()} 

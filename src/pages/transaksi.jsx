@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import InvoiceSearchApp from '../components/InvoiceSearchApp';
 
 function CekTransaksi() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []); 
+
   return (
     <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
       <div className="w-full max-w-2xl p-6 bg-gray-800 rounded-lg shadow-lg">
