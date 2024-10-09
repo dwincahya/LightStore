@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import games from '../data/gamesData';  
-import GameItem from './GameItem';     
+import GameItem from '../components/GameItem';     
 
 const GameList = ({ selectedFilter }) => {
   const [visibleCount, setVisibleCount] = useState(10);  

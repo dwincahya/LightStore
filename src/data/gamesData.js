@@ -11,23 +11,16 @@ import img9 from '../assets/img/soldier11.jpg';
 import img10 from '../assets/img/tof.jpg';
 
 const games = [
-  { name: 'Mobile Legends', publisher: 'Moonton', image: img1, categories: ['MOBA', 'Populer'] },
-  { name: 'Genshin Impact', publisher: 'miHoYo', image: img2, categories: ['RPG'] },
-  { name: 'Free Fire', publisher: 'Garena', image: img3, categories: ['Battle Royale', 'Populer'] },
-  { name: 'Honor of Kings', publisher: 'Tencent', image: img4, categories: ['MOBA'] },
-  { name: 'Honkai Star Rail', publisher: 'miHoYo', image: img5, categories: ['RPG'] },
-  { name: 'Wuthering Waves', publisher: 'Kuro Game', image: img6, categories: ['RPG'] },
-  { name: 'PUBG Mobile', publisher: 'Tencent', image: img7, categories: ['Battle Royale', 'Populer'] },
-  { name: 'League of Legends: Wild Rift', publisher: 'Riot Games', image: img8, categories: ['MOBA'] },
-  { name: 'Zenless Zone Zero', publisher: 'miHoYo', image: img9, categories: ['RPG'] },
-  { name: 'Tower of Fantasy', publisher: 'Hotta Studio', image: img10, categories: ['RPG'] },
-  { name: 'Honor of Kings', publisher: 'Tencent', image: img4, categories: ['MOBA'] },
-  { name: 'Honkai Star Rail', publisher: 'miHoYo', image: img5, categories: ['RPG'] },
-  { name: 'Wuthering Waves', publisher: 'Kuro Game', image: img6, categories: ['RPG'] },
-  { name: 'PUBG Mobile', publisher: 'Tencent', image: img7, categories: ['Battle Royale', 'Populer'] },
-  { name: 'League of Legends: Wild Rift', publisher: 'Riot Games', image: img8, categories: ['MOBA'] },
-  { name: 'Zenless Zone Zero', publisher: 'miHoYo', image: img9, categories: ['RPG'] },
-  { name: 'Tower of Fantasy', publisher: 'Hotta Studio', image: img10, categories: ['RPG'] },
+  { id: 1, name: 'Mobile Legends', publisher: 'Moonton', image: img1, categories: ['MOBA', 'Populer'] },
+  { id: 2, name: 'Genshin Impact', publisher: 'miHoYo', image: img2, categories: ['RPG'] },
+  { id: 3, name: 'Free Fire', publisher: 'Garena', image: img3, categories: ['Battle Royale', 'Populer'] },
+  { id: 4, name: 'Honor of Kings', publisher: 'Tencent', image: img4, categories: ['MOBA'] },
+  { id: 5, name: 'Honkai Star Rail', publisher: 'miHoYo', image: img5, categories: ['RPG'] },
+  { id: 6, name: 'Wuthering Waves', publisher: 'Kuro Game', image: img6, categories: ['RPG'] },
+  { id: 7, name: 'PUBG Mobile', publisher: 'Tencent', image: img7, categories: ['Battle Royale', 'Populer'] },
+  { id: 8, name: 'League of Legends: Wild Rift', publisher: 'Riot Games', image: img8, categories: ['MOBA'] },
+  { id: 9, name: 'Zenless Zone Zero', publisher: 'miHoYo', image: img9, categories: ['RPG'] },
+  { id: 10, name: 'Tower of Fantasy', publisher: 'Hotta Studio', image: img10, categories: ['RPG'] },
 ];
 
 export default games;
