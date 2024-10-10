@@ -5,6 +5,7 @@ import GameList from './GameList';
 import VoucherList from '../components/VoucherList';
 import PulsaEwalletList from '../components/PulsaEwalletList';
 import CSButton from '../components/CSButton';
+import PopularGames from '../components/PopularGames';
 
 function Home() {
   const [selectedFilter, setSelectedFilter] = useState(null);
@@ -28,6 +29,7 @@ function Home() {
   return (
     <div style={{ scrollBehavior: 'smooth' }}> 
       <Carousel />
+      <PopularGames />
       <TabNav onTabChange={setActiveTab} onFilterChange={setSelectedFilter} />
       {renderContent()} 
       <CSButton />
