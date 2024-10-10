@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 // src/components/InvoiceSearchApp.js
 import React, { useState, useEffect } from 'react';
 import { getPendingInvoices, searchInvoiceByNumber } from '../data/invoice'; 
+=======
+import React, { useState, useEffect } from 'react';
+import { getPendingInvoices, searchInvoiceByNumber } from '../api/transaction'; 
+>>>>>>> dd2b7074b9f133d2d7c8d6d8c82434a0d5fd1e16
 import SearchInvoice from './SearchInvoice';
 import TransactionTable from './TransactionTable';
 
