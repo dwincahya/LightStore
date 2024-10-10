@@ -1,5 +1,6 @@
 {
   "name": "lightstore",
+  "homepage": "https://lightstore.siaktive.my.id/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
