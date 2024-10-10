@@ -1,5 +1,7 @@
-<<<<<<< HEAD
 // src/data/invoice.js
+
+// Kunci untuk penyimpanan transaksi
+const TRANSACTIONS_KEY = 'transactions';
 
 // Array transaksi yang menjadi data storage
 const invoices = [
@@ -37,27 +39,23 @@ export const getPendingInvoices = () => {
 
 // Fungsi untuk menambah transaksi baru
 export const addTransaction = (transaction) => {
-  invoices.push(transaction);
+  // Simpan transaksi ke localStorage
+  const transactions = getTransactions();
+  transactions.push(transaction);
+  localStorage.setItem(TRANSACTIONS_KEY, JSON.stringify(transactions));
 };
 
 // Fungsi untuk mencari invoice berdasarkan nomor invoice
 export const searchInvoiceByNumber = (invoiceNumber) => {
   return invoices.find(invoice => invoice.invoiceNumber === invoiceNumber);
 };
-=======
-const TRANSACTIONS_KEY = 'transactions';
 
+// Fungsi untuk mendapatkan transaksi dari localStorage
 const getTransactions = () => {
   const transactions = JSON.parse(localStorage.getItem(TRANSACTIONS_KEY)) || [];
   return transactions;
 };
 
-export const addTransaction = (transaction) => {
-  const transactions = getTransactions();
-  transactions.push(transaction);
-  localStorage.setItem(TRANSACTIONS_KEY, JSON.stringify(transactions));
-};
-
+// Mengambil transaksi dari localStorage saat aplikasi dimuat
 const transactions = getTransactions();
 export default transactions;
->>>>>>> dd2b7074b9f133d2d7c8d6d8c82434a0d5fd1e16
