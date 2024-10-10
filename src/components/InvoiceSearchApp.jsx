@@ -1,4 +1,3 @@
-// src/components/InvoiceSearchApp.js
 import React, { useState, useEffect } from 'react';
 import { getPendingInvoices, searchInvoiceByNumber } from '../data/invoice'; 
 import SearchInvoice from './SearchInvoice';

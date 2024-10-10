@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import games from '../data/gamesData'; // Data game yang diimpor
-import { addTransaction } from '../data/invoice'; // Fungsi untuk menambah transaksi
-import { ClipboardIcon, CheckCircleIcon } from '@heroicons/react/24/outline'; // Ikon untuk notifikasi
+import games from '../data/gamesData'; 
+import { addTransaction } from '../data/invoice'; 
+import { ClipboardIcon, CheckCircleIcon } from '@heroicons/react/24/outline'; 
 
 const GameDetail = () => {
-  const { id } = useParams(); // Mengambil ID dari URL
-  const navigate = useNavigate(); // Navigasi antar halaman
-  const [game, setGame] = useState(null); // State untuk menyimpan detail game
-  const [selectedItem, setSelectedItem] = useState(null); // State untuk item yang dipilih
-  const [whatsappNumber, setWhatsappNumber] = useState(''); // State untuk nomor WhatsApp
-  const [accountId, setAccountId] = useState(''); // State untuk ID akun
-  const [error, setError] = useState({ accountId: '', whatsappNumber: '', selectedItem: '' }); // State untuk menyimpan pesan error
-  const [notification, setNotification] = useState({ visible: false, message: '', invoiceId: '' }); // State untuk notifikasi
-  const [currentDate, setCurrentDate] = useState(''); // State untuk menyimpan tanggal dan waktu saat ini
+  const { id } = useParams(); 
+  const navigate = useNavigate(); 
+  const [game, setGame] = useState(null); 
+  const [selectedItem, setSelectedItem] = useState(null); 
+  const [whatsappNumber, setWhatsappNumber] = useState(''); 
+  const [accountId, setAccountId] = useState(''); 
+  const [error, setError] = useState({ accountId: '', whatsappNumber: '', selectedItem: '' }); 
+  const [notification, setNotification] = useState({ visible: false, message: '', invoiceId: '' }); 
+  const [currentDate, setCurrentDate] = useState(''); 
 
   useEffect(() => {
-    const foundGame = games.find((g) => g.id === parseInt(id)); // Mencari game berdasarkan ID
+    const foundGame = games.find((g) => g.id === parseInt(id));
     if (foundGame) {
       setGame(foundGame);
     }
-    window.scrollTo(0, 0); // Menggulir ke atas saat komponen dimuat
+    window.scrollTo(0, 0);
 
     const interval = setInterval(() => {
       const now = new Date();
@@ -35,22 +35,21 @@ const GameDetail = () => {
         timeZone: 'Asia/Jakarta',
       }).replace(',', '').replace(/\//g, '-');
 
-      setCurrentDate(formattedTime); // Mengatur tanggal dan waktu saat ini
+      setCurrentDate(formattedTime);
     }, 1000);
 
-    return () => clearInterval(interval); // Membersihkan interval saat komponen tidak digunakan
+    return () => clearInterval(interval); 
   }, [id]);
 
   const handleItemClick = (item) => {
-    setSelectedItem(item); // Mengatur item yang dipilih
-    setError((prev) => ({ ...prev, selectedItem: '' })); // Menghapus error untuk pemilihan item
+    setSelectedItem(item); 
+    setError((prev) => ({ ...prev, selectedItem: '' })); 
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Mencegah pengiriman default formulir
-    setError({ accountId: '', whatsappNumber: '', selectedItem: '' }); // Menghapus error sebelumnya
+    e.preventDefault(); 
+    setError({ accountId: '', whatsappNumber: '', selectedItem: '' });
 
-    // Validasi input
     if (!accountId) {
       setError((prev) => ({ ...prev, accountId: 'ID Game wajib diisi!' }));
       return;
