@@ -7,6 +7,7 @@ import CekTransaksi from './pages/transaksi';
 import GameList from './pages/GameList';
 import GameDetail from './pages/GameDetail'; 
 import Footer from './components/Footer';
+import CSButton from './components/CSButton';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/daftar-game" element={<GameList />} />
         <Route path="/game/:id" element={<GameDetail />} /> 
       </Routes>
+      <CSButton />
       <Footer />
     </Router>
   );

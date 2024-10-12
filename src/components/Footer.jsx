@@ -1,13 +1,14 @@
 import React from 'react'; 
 import { NavLink } from 'react-router-dom'; 
 import { FaWhatsapp, FaInstagram, FaTiktok } from 'react-icons/fa'; 
+import logo from '../assets/img/logo.png';
 
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-8 mt-72">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-start px-4">
         <div className="items-center md:items-start flex flex-col mb-6 md:mb-0 md:w-1/4 md:mr-4">
-          <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo Light Store" className="h-12 mb-6" />
+          <img src={logo} alt="Logo Light Store" className="h-12 mb-6" />
           <p className="font-medium text-xs md:text-sm mb-8 text-center md:text-left">
             Light Store - Top Up Hemat Main Puas. Tempat Top Up dan Jual Beli Akun Game.
           </p>

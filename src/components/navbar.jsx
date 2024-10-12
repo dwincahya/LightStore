@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom'; 
+import logo from '../assets/img/logo.png';
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -13,7 +14,7 @@ function Navbar() {
       <nav className="bg-gray-900 fixed top-0 left-0 right-0 z-50 bg-opacity-75 shadow-md backdrop-blur-md">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <NavLink to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="https://flowbite.com/docs/images/logo.svg" className="h-8 w-8" alt="Logo" />
+            <img src={logo} className="h-8 w-8" alt="Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-white">Light Store</span>
           </NavLink>
 
