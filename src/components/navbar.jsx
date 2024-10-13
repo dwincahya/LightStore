@@ -1,12 +1,46 @@
-import { useState } from 'react';
-import { NavLink } from 'react-router-dom'; 
+import { useState, useEffect } from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'; 
 import logo from '../assets/img/logo.png';
+import gamesData from '../data/gamesData'; 
 
 function Navbar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const location = useLocation(); 
+  const navigate = useNavigate();
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  useEffect(() => {
+    setIsDropdownOpen(false);
+    setSearchQuery('');
+    setSearchResults([]); 
+  }, [location]);
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (searchQuery.trim() !== '') {
+      console.log('Mencari:', searchQuery);
+    }
+  };
+
+  const fetchSearchResults = (query) => {
+    if (query) {
+      const filteredResults = gamesData.filter(game =>
+        game.name.toLowerCase().includes(query.toLowerCase())
+      );
+      setSearchResults(filteredResults);
+    } else {
+      setSearchResults([]); 
+    }
+  };
+
+  const goToGameDetail = (gameId) => {
+    navigate(`/game/${gameId}`);
+    setSearchQuery(''); 
+    setSearchResults([]); 
   };
 
   return (
@@ -59,12 +93,35 @@ function Navbar() {
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                 </svg>
               </div>
-              <input
-                type="text"
-                id="search-navbar"
-                className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Search..."
-              />
+              <form onSubmit={handleSearch}>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    fetchSearchResults(e.target.value); 
+                  }}
+                  className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Cari Game"
+                />
+              </form>
+              {searchResults.length > 0 && (
+                <ul className="text-white absolute w-full bg-gray-950 shadow-lg rounded-lg mt-2 z-10">
+                  {searchResults.map((game) => (
+                    <li
+                      key={game.id}
+                      onClick={() => goToGameDetail(game.id)}
+                      className="cursor-pointer hover:bg-gray-200 p-2 flex items-center"
+                    >
+                      <img src={game.image} alt={game.name} className="w-12 h-12 rounded me-3" />
+                      <div>
+                        <p className="font-semibold">{game.name}</p>
+                        <p className="text-sm text-gray-500">{game.publisher}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
 
             <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent bg-gray-800 md:dark:bg-transparent border-gray-700 md:mr-32">
@@ -110,12 +167,35 @@ function Navbar() {
                   <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                 </svg>
               </div>
-              <input
-                type="text"
-                id="search-navbar"
-                className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Search..."
-              />
+              <form onSubmit={handleSearch}>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    fetchSearchResults(e.target.value); 
+                  }}
+                  className="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  placeholder="Cari Game"
+                />
+              </form>
+              {searchResults.length > 0 && (
+                <ul className="text-white absolute w-full bg-gray-950 shadow-lg rounded-lg mt-2 z-10">
+                  {searchResults.map((game) => (
+                    <li
+                      key={game.id}
+                      onClick={() => goToGameDetail(game.id)}
+                      className="cursor-pointer hover:bg-gray-200 p-2 flex items-center"
+                    >
+                      <img src={game.image} alt={game.name} className="w-12 h-12 rounded me-3" />
+                      <div>
+                        <p className="font-semibold">{game.name}</p>
+                        <p className="text-xs text-gray-300">{game.publisher}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           </div>
         </div>

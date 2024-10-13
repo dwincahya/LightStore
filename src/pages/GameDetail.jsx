@@ -152,7 +152,7 @@ const GameDetail = () => {
                 <div
                   key={item.value}
                   onClick={() => handleItemClick(item.value)}
-                  className={`cursor-pointer text-white border-2 rounded-lg p-2 transition-transform transform hover:scale-105 ${selectedItem === item.value ? 'text-black border-blue-700 bg-blue-100' : 'border-gray-600'}`}
+                  className={`cursor-pointer text-white border-2 rounded-lg p-2 transition-transform transform hover:scale-105 ${selectedItem === item.value ? ' border-blue-700 bg-gray-900' : 'border-gray-600'}`}
                 >
                   {item.label} - Rp {item.price.toLocaleString()}
                 </div>

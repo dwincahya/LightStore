@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
-
+import { useNavigate } from 'react-router-dom'; 
 const GameItem = ({ game }) => {
   const [isPressed, setIsPressed] = useState(false);
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/game/${game.id}`); // Mengarahkan ke detail game
+    navigate(`/game/${game.id}`);
   };
 
   return (
@@ -16,7 +15,7 @@ const GameItem = ({ game }) => {
       onMouseUp={() => setIsPressed(false)} 
       onTouchStart={() => setIsPressed(true)} 
       onTouchEnd={() => setIsPressed(false)}
-      onClick={handleClick} // Tambahkan penanganan klik
+      onClick={handleClick} 
     >
       <div className="overflow-hidden">
         <img
