@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Carousel from '../components/Banner';
+import Carousel from '../components/BannerMove';
 import TabNav from '../components/TabNav';
 import GameList from './GameList';
 import VoucherList from '../components/VoucherList';
