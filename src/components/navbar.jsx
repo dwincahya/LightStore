@@ -111,7 +111,7 @@ function Navbar() {
                     <li
                       key={game.id}
                       onClick={() => goToGameDetail(game.id)}
-                      className="cursor-pointer hover:bg-gray-200 p-2 flex items-center"
+                      className=" hover:bg-gray-700 p-2 flex items-center"
                     >
                       <img src={game.image} alt={game.name} className="w-12 h-12 rounded me-3" />
                       <div>
@@ -185,7 +185,7 @@ function Navbar() {
                     <li
                       key={game.id}
                       onClick={() => goToGameDetail(game.id)}
-                      className="cursor-pointer hover:bg-gray-200 p-2 flex items-center"
+                      className="cursor-pointer hover:bg-gray-700 p-2 flex items-center"
                     >
                       <img src={game.image} alt={game.name} className="w-12 h-12 rounded me-3" />
                       <div>
