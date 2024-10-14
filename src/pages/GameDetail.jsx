@@ -116,7 +116,7 @@ const GameDetail = () => {
         </div>
       )}
 
-      <div className="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+      <div className=" w-full grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
         <div className="bg-gray-800 shadow-lg rounded-lg p-6">
           <img src={game.image} alt={game.name} className="rounded-lg w-full mb-4" />
           <h1 className="text-2xl font-bold text-white">{game.name}</h1>
@@ -132,7 +132,7 @@ const GameDetail = () => {
 
         <div className="bg-gray-800 shadow-lg rounded-lg p-6 flex flex-col">
           <h3 className="text-xl font-semibold text-white mb-4">Detail Transaksi</h3>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="accountId" className="block text-sm font-medium text-gray-300">ID Game:</label>
               <input
@@ -147,12 +147,12 @@ const GameDetail = () => {
             </div>
 
             <h4 className="text-lg font-semibold text-gray-300">Pilih Item:</h4>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 px-5 md:px-8">
               {game.items.map((item) => (
                 <div
                   key={item.value}
                   onClick={() => handleItemClick(item.value)}
-                  className={`cursor-pointer text-white border-2 rounded-lg p-2 transition-transform transform hover:scale-105 ${selectedItem === item.value ? ' border-blue-700 bg-gray-900' : 'border-gray-600'}`}
+                  className={` cursor-pointer text-white border-2 text-sm rounded-lg p-4 transition-transform transform hover:scale-105 max-w-32 w-40 md:max-w-40 break-words ${selectedItem === item.value ? 'border-blue-700 bg-gray-900' : 'border-gray-600'}`}
                 >
                   {item.label} - Rp {item.price.toLocaleString()}
                 </div>
