@@ -19,7 +19,7 @@ const reviews = [
     {
       game: "Mobile Legends",
       review:
-        "puass banget beli di sini terus murah sama prosesnya juga cepet. sehat\" min aoshi lancar teruss 🔥🔥",
+        "puass banget beli di sini terus murah sama prosesnya juga cepet. sehat\" min light lancar teruss 🔥🔥",
       phone: "628******590",
       purchase: "12 Diamonds (11 + 1 Bonus )",
       rating: 5,
