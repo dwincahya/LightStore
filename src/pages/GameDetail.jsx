@@ -65,7 +65,10 @@ const GameDetail = () => {
       return;
     }
 
-    const invoiceNumber = `${game.id}${currentDate.replace(/[-: ]/g, '')}`;
+    const formattedDate = currentDate.replace(/[-: ]/g, '').slice(0, 10); 
+    const randomCharacters = Math.random().toString(36).substring(2, 8).toUpperCase(); 
+    const invoiceNumber = `LS${randomCharacters}${formattedDate}INV`; 
+
     const totalPrice = game.items.find(item => item.value === selectedItem).price;
 
     const newTransaction = {
@@ -85,7 +88,8 @@ const GameDetail = () => {
       setNotification({ visible: false, message: '', invoiceId: '' });
       navigate('/cek-transaksi');
     }, 3000);
-  };
+};
+
 
   const handleCopyInvoiceId = () => {
     navigator.clipboard.writeText(notification.invoiceId)
@@ -107,7 +111,7 @@ const GameDetail = () => {
   return (
     <div className="bg-gray-900 min-h-screen flex flex-col items-center p-8">
       {notification.visible && (
-        <div className="fixed top-5 right-5 bg-green-500 text-white p-4 rounded-lg shadow-md flex items-center space-x-2">
+        <div className="fixed top-20 right-5 bg-green-500 text-white p-4 rounded-lg shadow-md flex items-center space-x-2 z-50">
           <CheckCircleIcon className="h-6 w-6" />
           <span className="font-semibold">{notification.message}</span>
           <button onClick={handleCopyInvoiceId} className="ml-2 hover:text-gray-200">

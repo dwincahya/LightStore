@@ -29,7 +29,7 @@ const TransactionTable = ({ transactions }) => {
               <td className="py-2 px-1 sm:px-2">{transaction.date}</td>
               <td className="py-2 px-1 sm:px-2">{formatInvoiceNumber(transaction.invoiceNumber)}</td>
               <td className="py-2 px-1 sm:px-2">{formatPhoneNumber(transaction.phoneNumber)}</td>
-              <td className="py-2 px-1 sm:px-2">{transaction.price}</td>
+              <td className="py-2 px-1 sm:px-2">Rp {transaction.price.toLocaleString('id-ID')}</td>
               <td className={`py-2 px-1 sm:px-2 ${transaction.status === 'complete' ? 'text-lime-500' : 'text-yellow-500'}`}>
                 {transaction.status}
               </td>

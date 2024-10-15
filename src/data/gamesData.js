@@ -21,7 +21,6 @@ const games = [
       { value: '5diamond', label: '5 Diamonds (5 + 0 bonus)', category: 'Currency', price: 2000 },
       { value: '12diamond', label: '12 Diamonds (11 + 1 bonus)', category: 'Currency', price: 4000 },
       { value: '19diamond', label: '19 Diamonds (17 + 2 bonus)', category: 'Currency', price: 6000 },
-      { value: '19diamond', label: '19 Diamonds (19 + 1 bonus)', category: 'Currency', price: 7000 },
       { value: '28diamond', label: '28 Diamonds (28 + 2 bonus)', category: 'Currency', price: 10000 },
       { value: '36diamond', label: '36 Diamonds (36 + 2 bonus)', category: 'Currency', price: 12000 },
       { value: '43diamond', label: '43 Diamonds (43 + 3 bonus)', category: 'Currency', price: 15000 },

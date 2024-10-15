@@ -1,9 +1,5 @@
-// src/data/invoice.js
-
-// Kunci untuk penyimpanan transaksi
 const TRANSACTIONS_KEY = 'transactions';
 
-// Array transaksi yang menjadi data storage
 const invoices = [
   {
     id: 1,
@@ -29,33 +25,28 @@ const invoices = [
     price: 250000,
     status: 'pending'
   },
-  // Tambahkan data lainnya sesuai kebutuhan
 ];
 
-// Fungsi untuk mendapatkan semua transaksi dengan status "pending"
 export const getPendingInvoices = () => {
-  return invoices.filter(invoice => invoice.status === 'pending');
+  const transactions = getTransactions();
+  return transactions.filter(invoice => invoice.status === 'pending');
 };
 
-// Fungsi untuk menambah transaksi baru
 export const addTransaction = (transaction) => {
-  // Simpan transaksi ke localStorage
   const transactions = getTransactions();
   transactions.push(transaction);
   localStorage.setItem(TRANSACTIONS_KEY, JSON.stringify(transactions));
 };
 
-// Fungsi untuk mencari invoice berdasarkan nomor invoice
 export const searchInvoiceByNumber = (invoiceNumber) => {
-  return invoices.find(invoice => invoice.invoiceNumber === invoiceNumber);
+  const transactions = getTransactions();
+  return transactions.find(invoice => invoice.invoiceNumber === invoiceNumber);
 };
 
-// Fungsi untuk mendapatkan transaksi dari localStorage
 const getTransactions = () => {
   const transactions = JSON.parse(localStorage.getItem(TRANSACTIONS_KEY)) || [];
   return transactions;
 };
 
-// Mengambil transaksi dari localStorage saat aplikasi dimuat
 const transactions = getTransactions();
 export default transactions;
