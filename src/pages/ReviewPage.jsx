@@ -1,16 +1,16 @@
 import React, { useEffect } from "react";
-import FormContact from "../components/FormContact";
+import Review from "../components/Review";
 
-function Contact() {
+function ReviewPage() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   return (
-    <div className="py-16">
-      <FormContact />
+    <div>
+      <Review />
     </div>
   );
 }
 
-export default Contact;
+export default ReviewPage;

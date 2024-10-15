@@ -8,7 +8,8 @@ import GameList from './pages/GameList';
 import GameDetail from './pages/GameDetail'; 
 import Footer from './components/Footer';
 import CSButton from './components/CSButton';
-import Contact from './pages/Contact'
+import Contact from './pages/Contact';
+import ReviewPage from './pages/ReviewPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/daftar-game" element={<GameList />} />
         <Route path="/game/:id" element={<GameDetail />} /> 
         <Route path="/contact" element={<Contact />} /> 
+        <Route path="/reviews" element={<ReviewPage />} /> 
       </Routes>
       <CSButton />
       <Footer />
