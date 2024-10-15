@@ -8,6 +8,7 @@ import GameList from './pages/GameList';
 import GameDetail from './pages/GameDetail'; 
 import Footer from './components/Footer';
 import CSButton from './components/CSButton';
+import Contact from './pages/Contact'
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/jual-beli" element={<JualBeli />} />
         <Route path="/daftar-game" element={<GameList />} />
         <Route path="/game/:id" element={<GameDetail />} /> 
+        <Route path="/contact" element={<Contact />} /> 
       </Routes>
       <CSButton />
       <Footer />
